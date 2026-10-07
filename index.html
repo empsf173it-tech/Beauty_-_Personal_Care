@@ -1,0 +1,626 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/new-logo.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Beauty & Beauty Parlour</title>
+    <meta name="description"
+        content="Expert hair styling, skin care & beauty treatments. Experience premium salon services at Aura Beauty & Beauty Parlour.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Lexend+Deca:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/compiled.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body class="bg-brand-bg text-brand-text transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-brand-bg border-b border-brand-border transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center cursor-pointer shrink-0">
+                    <img src="assets/images/new-logo.jpg" alt="Aura Beauty Logo" width="40" height="40" style="max-height:40px; width:auto;" class="h-10 w-10 object-contain">
+                    <span class="ms-3 text-2xl font-heading font-bold text-brand-text tracking-wide whitespace-nowrap">
+                        Aura<span class="text-brand-accent">Beauty</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu (Centered) -->
+                <div class="hidden min-[1100px]:flex items-center justify-center flex-1">
+                    <div class="flex items-center gap-6 lg:gap-8">
+                        <a href="index.html"
+                            class="px-3 py-2 text-sm font-medium text-brand-text hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">Home<span class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transition-transform duration-300"></span>
+                        </a>
+                        <a href="about.html"
+                            class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            About
+                            <span
+                                class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="services.html"
+                            class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            Services
+                            <span
+                                class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="gallery.html"
+                            class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            Gallery
+                            <span
+                                class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="contact.html"
+                            class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            Contact
+                            <span
+                                class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="hidden min-[1100px]:flex items-center space-x-4 shrink-0">
+                    <button id="theme-toggle"
+                        class="p-2 rounded-full text-brand-textSec hover:text-brand-accent hover:bg-brand-bgSec transition-colors theme-icon"
+                        aria-label="Toggle Theme">
+                    </button>
+                    
+                    <a href="appointments.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong whitespace-nowrap">Book
+                        Now</a>
+                    <a href="signup.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-text hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong whitespace-nowrap">Sign
+                        Up</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-me-2 flex min-[1100px]:hidden items-center space-x-4">
+                    <button id="menu-toggle" aria-label="Toggle Menu"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-brand-textSec hover:text-brand-text hover:bg-brand-bgSec focus:outline-none">
+                        <i data-lucide="menu" id="menu-open-icon" class="block h-8 w-8 text-brand-accent"></i>
+                        <i data-lucide="x" id="menu-close-icon" class="hidden h-8 w-8 text-brand-accent"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden min-[1100px]:hidden absolute top-20 start-0 w-full h-screen bg-black/50 z-40">
+            <div
+                class="absolute end-0 top-0 w-64 h-full bg-brand-bgSec shadow-2xl p-6 flex flex-col space-y-6 transform transition-transform duration-300 border-s border-brand-border overflow-y-auto">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Home</a>
+                    <a href="about.html"
+                        class="text-lg font-medium text-brand-textSec hover:text-brand-accent">About</a>
+                    <a href="services.html"
+                        class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Services</a>
+                    <a href="gallery.html"
+                        class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Gallery</a>
+                    <a href="contact.html"
+                        class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Contact</a>
+                </div>
+
+                <div class="pt-4 border-t border-brand-border flex flex-col space-y-3">
+                    <a href="appointments.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong text-center">Book
+                        Now</a>
+                    <a href="signup.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-text hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong text-center">Sign
+                        Up</a>
+                    <div class="flex justify-center items-center pt-2">
+                        <button id="mobile-theme-toggle"
+                            class="p-2 rounded-full text-brand-textSec hover:text-brand-accent hover:bg-brand-bgSec transition-colors theme-icon flex items-center justify-center">
+                            <!-- Icon will be inserted by JS -->
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section
+            class="hero-section relative min-h-[55vh] md:min-h-[60vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-brand-bg">
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/new-hero.jpg" alt="Luxury Salon Interior"
+                    class="w-full h-full object-cover opacity-60 transition-opacity">
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-brand-bg">
+                </div>
+            </div>
+
+            <div
+                class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-28 pb-28 text-center flex flex-col items-center">
+                <div class="max-w-4xl animate-in fade-in slide-in-from-bottom-10 duration-1000">
+                    <div class="inline-flex items-center space-x-2 bg-brand-bg border-2 border-brand-accent rounded-full px-5 py-2 text-brand-accent text-sm font-extrabold mb-6 shadow-md">
+                        <i data-lucide="sparkles" class="h-4 w-4 text-brand-accent"></i>
+                        <span>#1 Luxury Salon & Beauty Parlour</span>
+                    </div>
+
+                    <h1
+                        class="hero-title text-5xl md:text-7xl font-heading font-bold leading-tight mb-8 drop-shadow-md text-brand-text">
+                        Premium Beauty & <span class="text-brand-accent gold-text-stroke">Skin Care</span>
+                    </h1>
+                    <p class="hero-desc text-lg md:text-xl text-brand-text font-semibold mb-10 max-w-3xl mx-auto drop-shadow-sm leading-relaxed">
+                        Experience the art of beauty at Aura Beauty, your premier Beauty Personal Care Resource & Knowledge Network. Premium skin care, advanced facials, and luxurious beauty treatments designed to make your skin glow and feel its absolute best.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center mb-10">
+                        <a href="appointments.html"
+                            class="inline-flex items-center justify-center rounded-full border-2 border-brand-accent bg-brand-accent text-black px-8 py-4 text-lg font-bold shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:shadow-[0_0_40px_rgba(212,175,55,0.7)] hover:bg-brand-accentSec hover:scale-105 transition-all duration-300">
+                            Book an Appointment
+                        </a>
+                        <a href="services.html"
+                            class="inline-flex items-center justify-center rounded-full border-2 border-white/80 bg-black/60 text-white px-8 py-4 text-lg font-bold hover:bg-brand-accent hover:text-black hover:border-brand-accent transition-all duration-300 shadow-md">
+                            Explore Our Menu
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features / Why Choose Us Section -->
+        <section class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <!-- Short & Simple Section Heading -->
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-accent text-xs font-bold uppercase tracking-widest block mb-2">Our Experience</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-brand-text">
+                    Why Choose <span class="text-brand-accent gold-text-stroke">Aura Beauty</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div
+                    class="bg-brand-bgSec p-6 rounded-2xl border border-brand-border shadow-xl border-t-4 border-t-brand-accent h-full text-center hover:-translate-y-[5px] hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)] hover:border-brand-accent/70 transition-all duration-300">
+                    <div class="flex flex-col items-center h-full">
+                        <div class="w-full mb-4">
+                            <div class="w-full h-40 rounded-xl overflow-hidden border border-brand-border">
+                                <img src="assets/images/salon-team.png" alt="Expert Stylists"
+                                    class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Icon badge cleanly BELOW image -->
+                        <div
+                            class="w-12 h-12 bg-brand-bg rounded-full border border-brand-accent/50 shadow-[0_0_15px_rgba(212,175,55,0.25)] flex items-center justify-center mb-3">
+                            <i data-lucide="scissors" class="h-5 w-5 text-brand-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-text mb-2">Expert Stylists</h3>
+                            <p class="text-brand-textSec text-sm leading-relaxed">Our master stylists have years of experience creating
+                                personalized looks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="bg-brand-bgSec p-6 rounded-2xl border border-brand-border shadow-xl border-t-4 border-t-brand-accent h-full text-center hover:-translate-y-[5px] hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)] hover:border-brand-accent/70 transition-all duration-300">
+                    <div class="flex flex-col items-center h-full">
+                        <div class="w-full mb-4">
+                            <div class="w-full h-40 rounded-xl overflow-hidden border border-brand-border">
+                                <img src="assets/images/salon-products.png" alt="Premium Products"
+                                    class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Icon badge cleanly BELOW image -->
+                        <div
+                            class="w-12 h-12 bg-brand-bg rounded-full border border-brand-accent/50 shadow-[0_0_15px_rgba(212,175,55,0.25)] flex items-center justify-center mb-3">
+                            <i data-lucide="star" class="h-5 w-5 text-brand-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-text mb-2">Premium Products</h3>
+                            <p class="text-brand-textSec text-sm leading-relaxed">We use only the finest professional-grade beauty
+                                products from trusted global brands.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="bg-brand-bgSec p-6 rounded-2xl border border-brand-border shadow-xl border-t-4 border-t-brand-accent h-full text-center hover:-translate-y-[5px] hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)] hover:border-brand-accent/70 transition-all duration-300">
+                    <div class="flex flex-col items-center h-full">
+                        <div class="w-full mb-4">
+                            <div class="w-full h-40 rounded-xl overflow-hidden border border-brand-border">
+                                <img src="assets/images/skin-care-service.png" alt="Modern Techniques"
+                                    class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Icon badge cleanly BELOW image -->
+                        <div
+                            class="w-12 h-12 bg-brand-bg rounded-full border border-brand-accent/50 shadow-[0_0_15px_rgba(212,175,55,0.25)] flex items-center justify-center mb-3">
+                            <i data-lucide="sparkles" class="h-5 w-5 text-brand-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-text mb-2">Modern Techniques</h3>
+                            <p class="text-brand-textSec text-sm leading-relaxed">Staying updated with the latest trends and techniques in the beauty industry.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="bg-brand-bgSec p-6 rounded-2xl border border-brand-border shadow-xl border-t-4 border-t-brand-accent h-full text-center hover:-translate-y-[5px] hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)] hover:border-brand-accent/70 transition-all duration-300">
+                    <div class="flex flex-col items-center h-full">
+                        <div class="w-full mb-4">
+                            <div class="w-full h-40 rounded-xl overflow-hidden border border-brand-border">
+                                <img src="assets/images/new-hero.jpg" alt="Relaxing Ambiance"
+                                    class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Icon badge cleanly BELOW image -->
+                        <div
+                            class="w-12 h-12 bg-brand-bg rounded-full border border-brand-accent/50 shadow-[0_0_15px_rgba(212,175,55,0.25)] flex items-center justify-center mb-3">
+                            <i data-lucide="smile" class="h-5 w-5 text-brand-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-text mb-2">Relaxing Ambiance</h3>
+                            <p class="text-brand-textSec text-sm leading-relaxed">Enjoy a calming and luxurious environment designed for your complete relaxation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="py-24 bg-brand-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-heading font-bold text-brand-text mb-4">Our Signature Services
+                    </h2>
+                    <p class="text-brand-textSec max-w-2xl mx-auto">Comprehensive beauty services tailored to your
+                        unique style and preferences.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <a href="services.html?category=Hair Care"
+                        class="group bg-brand-bgSec/40 border border-brand-border rounded-3xl h-full flex flex-col justify-between items-center text-center hover:bg-brand-bgSec/80 hover:-translate-y-[5px] hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)] hover:border-brand-accent/50 transition-all duration-300 overflow-hidden">
+                        <div class="w-full h-48 overflow-hidden">
+                            <img src="assets/images/new-skincare-1.jpg" alt="Hair Care Services"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex flex-col items-center p-8">
+                            <i data-lucide="scissors"
+                                class="h-12 w-12 text-brand-accent mb-6 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="text-2xl font-bold mb-3 text-brand-text">Hair Care</h3>
+                            <p class="text-brand-textSec">Expert haircuts, styling, coloring, and treatments for all
+                                hair types and textures.</p>
+                        </div>
+                        <div
+                            class="pb-8 flex items-center justify-center text-brand-accent font-bold group-hover:translate-x-2 transition-transform">
+                            View Services <i data-lucide="arrow-right" class="ms-2 h-4 w-4"></i>
+                        </div>
+                    </a>
+                    <a href="services.html?category=Skin Care"
+                        class="group bg-brand-bgSec/40 border border-brand-border rounded-3xl h-full flex flex-col justify-between items-center text-center hover:bg-brand-bgSec/80 hover:-translate-y-[5px] hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)] hover:border-brand-accent/50 transition-all duration-300 overflow-hidden">
+                        <div class="w-full h-48 overflow-hidden">
+                            <img src="assets/images/skin-care-service.png" alt="Skin Care Services"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex flex-col items-center p-8">
+                            <i data-lucide="sparkles"
+                                class="h-12 w-12 text-brand-accent mb-6 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="text-2xl font-bold mb-3 text-brand-text">Skin Care</h3>
+                            <p class="text-brand-textSec">Rejuvenating facials, skin treatments, and glow therapies
+                                for radiant, healthy skin.</p>
+                        </div>
+                        <div
+                            class="pb-8 flex items-center justify-center text-brand-accent font-bold group-hover:translate-x-2 transition-transform">
+                            View Services <i data-lucide="arrow-right" class="ms-2 h-4 w-4"></i>
+                        </div>
+                    </a>
+                    <a href="services.html?category=Nail Treatments"
+                        class="group bg-brand-bgSec/40 border border-brand-border rounded-3xl h-full flex flex-col justify-between items-center text-center hover:bg-brand-bgSec/80 hover:-translate-y-[5px] hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)] hover:border-brand-accent/50 transition-all duration-300 overflow-hidden">
+                        <div class="w-full h-48 overflow-hidden">
+                            <img src="assets/images/nail-treatment.png" alt="Nail Treatment Services"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex flex-col items-center p-8">
+                            <i data-lucide="smile"
+                                class="h-12 w-12 text-brand-accent mb-6 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="text-2xl font-bold mb-3 text-brand-text">Nail Treatments</h3>
+                            <p class="text-brand-textSec">Luxurious manicures, pedicures, and nail art with premium
+                                polishes and care products.</p>
+                        </div>
+                        <div
+                            class="pb-8 flex items-center justify-center text-brand-accent font-bold group-hover:translate-x-2 transition-transform">
+                            View Services <i data-lucide="arrow-right" class="ms-2 h-4 w-4"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="py-24 bg-brand-bgSec relative overflow-hidden">
+            <div class="absolute top-0 end-0 w-1/3 h-full bg-brand-accent/5 skew-x-12"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-heading font-bold text-brand-text mb-4">How It Works</h2>
+                    <p class="text-brand-textSec max-w-2xl mx-auto">Simple steps to your transformation.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div
+                        class="relative group hover:-translate-y-[5px] transition-transform duration-300 flex flex-col items-center">
+                        <div
+                            class="text-5xl font-heading font-bold text-brand-text/10 group-hover:text-brand-accent/20 transition-colors mb-3">
+                            01</div>
+                        <div class="text-center px-4 pb-2">
+                            <h4 class="text-xl font-bold text-brand-accent mb-2">Consultation</h4>
+                            <p class="text-brand-textSec text-sm">Discuss your desired look with our experts.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div
+                        class="relative group hover:-translate-y-[5px] transition-transform duration-300 flex flex-col items-center">
+                        <div
+                            class="text-5xl font-heading font-bold text-brand-text/10 group-hover:text-brand-accent/20 transition-colors mb-3">
+                            02</div>
+                        <div class="text-center px-4 pb-2">
+                            <h4 class="text-xl font-bold text-brand-accent mb-2">Relax</h4>
+                            <p class="text-brand-textSec text-sm">Unwind in our luxurious salon with a soothing
+                                ambiance while we pamper you.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div
+                        class="relative group hover:-translate-y-[5px] transition-transform duration-300 flex flex-col items-center">
+                        <div
+                            class="text-5xl font-heading font-bold text-brand-text/10 group-hover:text-brand-accent/20 transition-colors mb-3">
+                            03</div>
+                        <div class="text-center px-4 pb-2">
+                            <h4 class="text-xl font-bold text-brand-accent mb-2">Transform</h4>
+                            <p class="text-brand-textSec text-sm">Watch as our stylists work their magic.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div
+                        class="relative group hover:-translate-y-[5px] transition-transform duration-300 flex flex-col items-center">
+                        <div
+                            class="text-5xl font-heading font-bold text-brand-text/10 group-hover:text-brand-accent/20 transition-colors mb-3">
+                            04</div>
+                        <div class="text-center px-4 pb-2">
+                            <h4 class="text-xl font-bold text-brand-accent mb-2">Glow</h4>
+                            <p class="text-brand-textSec text-sm">Step out with confidence and a stunning new look.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-brand-bgSec border-t border-brand-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-brand-text mb-4">What Our Clients Say
+                    </h2>
+                    <p class="text-brand-textSec max-w-2xl mx-auto">Real stories from real people who trust us with
+                        their beauty needs.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div
+                        class="bg-brand-bg p-8 rounded-2xl border border-brand-border shadow-lg relative flex flex-col h-full">
+                        <i data-lucide="quote" class="absolute top-6 right-6 h-8 w-8 text-brand-accent/20"></i>
+                        <div class="flex justify-center text-brand-accent mb-4">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star"
+                                class="h-4 w-4 fill-current"></i><i data-lucide="star"
+                                class="h-4 w-4 fill-current"></i><i data-lucide="star"
+                                class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-brand-textSec mb-6 italic flex-grow">"Absolutely amazing experience! The staff is
+                            so professional and they really listen to what you want. My hair has never looked better."
+                        </p>
+                        <div class="flex items-center mt-auto">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Sarah Jenkins"
+                                class="w-12 h-12 rounded-full object-cover border-2 border-brand-accent me-4 shrink-0 shadow-md">
+                            <div>
+                                <h4 class="text-brand-text font-bold text-sm">Sarah Jenkins</h4>
+                                <span class="text-xs text-brand-textSec">Loyal Client</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div
+                        class="bg-brand-bg p-8 rounded-2xl border border-brand-border shadow-lg relative flex flex-col h-full">
+                        <i data-lucide="quote" class="absolute top-6 right-6 h-8 w-8 text-brand-accent/20"></i>
+                        <div class="flex justify-center text-brand-accent mb-4">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star"
+                                class="h-4 w-4 fill-current"></i><i data-lucide="star"
+                                class="h-4 w-4 fill-current"></i><i data-lucide="star"
+                                class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-brand-textSec mb-6 italic flex-grow">"I came here for my bridal makeup and they
+                            did a phenomenal job. The makeup lasted all night and looked flawless in photos."</p>
+                        <div class="flex items-center mt-auto">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80" alt="Michel Gomez"
+                                class="w-12 h-12 rounded-full object-cover border-2 border-brand-accent me-4 shrink-0 shadow-md">
+                            <div>
+                                <h4 class="text-brand-text font-bold text-sm">Michel Gomez</h4>
+                                <span class="text-xs text-brand-textSec">Bridal Client</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div
+                        class="bg-brand-bg p-8 rounded-2xl border border-brand-border shadow-lg relative flex flex-col h-full">
+                        <i data-lucide="quote" class="absolute top-6 right-6 h-8 w-8 text-brand-accent/20"></i>
+                        <div class="flex justify-center text-brand-accent mb-4">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star"
+                                class="h-4 w-4 fill-current"></i><i data-lucide="star"
+                                class="h-4 w-4 fill-current"></i><i data-lucide="star"
+                                class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-brand-textSec mb-6 italic flex-grow">"The facial treatments are out of this
+                            world. So relaxing and my skin feels completely rejuvenated. Highly recommend the glow
+                            facial!"</p>
+                        <div class="flex items-center mt-auto">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Emily Chen"
+                                class="w-12 h-12 rounded-full object-cover border-2 border-brand-accent me-4 shrink-0 shadow-md">
+                            <div>
+                                <h4 class="text-brand-text font-bold text-sm">Emily Chen</h4>
+                                <span class="text-xs text-brand-textSec">Regular Client</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="py-20 bg-brand-bg border-t border-brand-border relative overflow-hidden">
+            <!-- Decorative circle -->
+            <div
+                class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-brand-accent/5 rounded-full blur-3xl">
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <i data-lucide="mail" class="h-12 w-12 text-brand-accent mx-auto mb-6"></i>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-brand-text mb-4">Subscribe for Beauty Tips &
+                    Offers</h2>
+                <p class="text-brand-textSec mb-8">Join our newsletter to receive exclusive discounts, expert beauty
+                    advice, and early access to our seasonal promotions.</p>
+
+                <form class="flex flex-col sm:flex-row max-w-xl mx-auto gap-4" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter your email address"
+                        class="flex-grow bg-brand-bgSec border border-brand-border rounded-full px-6 py-4 text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+                        required>
+                    <button type="submit"
+                        class="bg-brand-accent text-white font-bold rounded-full px-8 py-4 hover:bg-brand-accentSec transition-colors whitespace-nowrap shadow-neon hover:shadow-neon-strong">
+                        Subscribe Now
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="relative py-24 overflow-hidden border-t border-brand-border">
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/salon-cta-bg.png" alt="Salon Beauty Tools" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-linear-to-t from-black via-black/80 to-black/60 backdrop-blur-sm"></div>
+            </div>
+            <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">Ready to prioritize your beauty?
+                </h2>
+                <p class="text-gray-300 mb-8 text-lg">Join thousands of satisfied clients who trust Aura Beauty
+                    for their beauty transformations.</p>
+                <div class="flex justify-center">
+                    <a href="appointments.html"
+                        class="inline-flex items-center justify-center rounded-full bg-brand-accent text-black px-10 py-4 text-lg font-bold shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.7)] hover:bg-brand-accentSec transition-all duration-300">
+                        Book Your Session
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-bg border-t border-brand-border pt-16 pb-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center cursor-pointer">
+                        <img src="assets/images/new-logo.jpg" alt="Aura Beauty Logo" class="h-10 w-10 object-contain">
+                        <span class="ms-3 text-2xl font-heading font-bold text-brand-text tracking-wide">
+                            Aura<span class="text-brand-accent">Beauty</span>
+                        </span>
+                    </a>
+                    <p class="text-brand-textSec text-sm leading-relaxed">
+                        Your premier destination for expert hair styling, skin care, and complete beauty
+                        transformations. Look your best, feel your best.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-brand-text font-bold mb-4 inline-block pb-1">Quick
+                        Links</h3>
+                    <ul class="space-y-2 text-sm text-brand-textSec">
+                        <li><a href="about.html" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">About Us</a></li>
+                        <li><a href="about.html" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Our Stylists</a>
+                        </li>
+                        <li><a href="services.html" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Services</a>
+                        </li>
+                        <li><a href="contact.html" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Contact Support</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-brand-text font-bold mb-4 inline-block pb-1">Services
+                    </h3>
+                    <ul class="space-y-2 text-sm text-brand-textSec">
+                        <li><a href="services.html?category=Hair Care" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Hair Care</a></li>
+                        <li><a href="services.html?category=Nail Treatments" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Nail Treatments</a></li>
+                        <li><a href="services.html?category=Skin Care" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Skin Care</a></li>
+                        <li><a href="services.html?category=Makeup" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Makeup & Bridal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class=\"text-brand-text font-bold mb-4 inline-block pb-1\">Contact Us
+                    </h3>
+                    <ul class="space-y-4 text-sm text-brand-textSec">
+                        <li class="flex items-start">
+                            <i data-lucide="map-pin" class="h-5 w-5 text-brand-accent me-2 shrink-0"></i>
+                            <span>123 Beauty Blvd, Fashion District, Style City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="h-5 w-5 text-brand-accent me-2 shrink-0"></i>
+                            <span>+1 (800) 555-0199</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="h-5 w-5 text-brand-accent me-2 shrink-0"></i>
+                            <span>booking@glamoursalon.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-brand-textSec text-sm">© 2026 Aura Beauty. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-brand-textSec mt-4 md:mt-0">
+                    <a href="#" class="hover:text-brand-text">Privacy Policy</a>
+                    <a href="#" class="hover:text-brand-text">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="brand-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8cc7a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Outer circle with glow -->
+  <circle cx="50" cy="50" r="45" fill="#111111" stroke="url(#brand-grad)" stroke-width="3" filter="url(#glow)"/>
+  
+  <!-- Inner decorative dashed circle -->
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.6"/>
+
+  <!-- Scissors icon in the center (from Lucide icons, scaled up) -->
+  <g transform="translate(26, 26) scale(2)" stroke="url(#brand-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle cx="6" cy="6" r="3"/>
+    <circle cx="6" cy="18" r="3"/>
+    <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+    <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+    <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+  </g>
+</svg>

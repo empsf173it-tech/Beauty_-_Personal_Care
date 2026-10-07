@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Aura Beauty</title>
+    <meta name="description"
+        content="Learn about Aura Beauty's story, our expert stylists, premium products, and commitment to making you look your best.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Lexend+Deca:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/compiled.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/new-logo.jpg">
+
+</head>
+
+<body class="bg-brand-bg text-brand-text transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav
+        class="sticky top-0 z-50 bg-brand-bg border-b border-brand-border transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center cursor-pointer shrink-0">
+                    <img src="assets/images/new-logo.jpg" alt="Aura Beauty Logo" width="40" height="40" style="max-height:40px; width:auto;" class="h-10 w-10 object-contain">
+                    <span class="ms-3 text-2xl font-heading font-bold text-brand-text tracking-wide whitespace-nowrap">
+                        Aura<span class="text-brand-accent">Beauty</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu (Centered) -->
+                <div class="hidden min-[1100px]:flex items-center justify-center flex-1">
+                    <div class="flex items-center gap-6 lg:gap-8">
+                        <a href="index.html" class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">Home<span class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="about.html"
+                            class="px-3 py-2 text-sm font-medium text-brand-text hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            About
+                            <span class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transition-transform duration-300"></span>
+                        </a>
+                        <a href="services.html" class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            Services
+                            <span class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="gallery.html" class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            Gallery
+                            <span class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="contact.html" class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            Contact
+                            <span class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="hidden min-[1100px]:flex items-center space-x-4 shrink-0">
+                    <button id="theme-toggle"
+                        class="p-2 rounded-full text-brand-textSec hover:text-brand-accent hover:bg-brand-bgSec transition-colors theme-icon"
+                        aria-label="Toggle Theme">
+                    </button>
+                    
+                    <a href="appointments.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong whitespace-nowrap">Book
+                        Now</a>
+                    <a href="signup.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-text hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong whitespace-nowrap">Sign
+                        Up</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-me-2 flex min-[1100px]:hidden items-center space-x-4">
+                    <button id="menu-toggle"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-brand-textSec hover:text-brand-text hover:bg-brand-bgSec focus:outline-none">
+                        <i data-lucide="menu" id="menu-open-icon" class="block h-8 w-8 text-brand-accent"></i>
+                        <i data-lucide="x" id="menu-close-icon" class="hidden h-8 w-8 text-brand-accent"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden min-[1100px]:hidden absolute top-20 start-0 w-full h-screen bg-black/50 z-40">
+            <div
+                class="absolute end-0 top-0 w-64 h-full bg-brand-bgSec shadow-2xl p-6 flex flex-col space-y-6 transform transition-transform duration-300 border-s border-brand-border overflow-y-auto">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Home</a>
+                    <a href="about.html" class="text-lg font-medium text-brand-textSec hover:text-brand-accent">About</a>
+                    <a href="services.html" class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Services</a>
+                    <a href="gallery.html" class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Gallery</a>
+                    <a href="contact.html" class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Contact</a>
+                </div>
+
+                <div class="pt-4 border-t border-brand-border flex flex-col space-y-3">
+                    <a href="appointments.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong text-center">Book
+                        Now</a>
+                    <a href="signup.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-text hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong text-center">Sign
+                        Up</a>
+                    <div class="flex justify-center items-center pt-2">
+                        <button id="mobile-theme-toggle"
+                            class="p-2 rounded-full text-brand-textSec hover:text-brand-accent hover:bg-brand-bgSec transition-colors theme-icon flex items-center justify-center">
+                            <!-- Icon will be inserted by JS -->
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="min-h-screen bg-brand-bg pt-6 pb-12 transition-colors duration-300">
+        <!-- Hero / Mission -->
+        <div class="hero-section relative min-h-[55vh] md:min-h-[60vh] lg:min-h-[80vh] flex flex-col items-center justify-center mb-12 overflow-hidden rounded-3xl mx-4 sm:mx-6 lg:mx-8 border border-brand-border text-center">
+            <!-- Background image overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/salon-team.png" alt="Aura Beauty Heritage"
+                    class="w-full h-full object-cover object-center opacity-50 transition-opacity">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-brand-bgSec"></div>
+            </div>
+
+            <div class="max-w-3xl mx-auto px-4 relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                <div class="inline-flex items-center space-x-2 bg-brand-bg border-2 border-brand-accent rounded-full px-5 py-2 text-brand-accent text-xs font-extrabold uppercase tracking-widest mb-6 shadow-md">
+                    <i data-lucide="award" class="h-4 w-4 text-brand-accent"></i>
+                    <span>Our Story & Philosophy</span>
+                </div>
+
+                <h1 class="hero-title text-4xl md:text-5xl font-heading font-bold text-brand-text mb-6 drop-shadow-sm">
+                    Redefining Beauty with <span class="text-brand-accent gold-text-stroke">Passion & Expertise</span>
+                </h1>
+                <p class="hero-desc text-lg md:text-xl text-brand-text font-semibold leading-relaxed text-center max-w-2xl mx-auto">
+                    Founded in 2010, Aura Beauty has evolved into the city's most trusted Beauty Personal Care Resource & Knowledge Network.
+                    Our mission is simple: to help every client discover their unique beauty through expert care,
+                    premium products, and an expansive network of personalized attention.
+                </p>
+            </div>
+        </div>
+
+        <!-- Tech & Quality Grid -->
+        <div class="bg-brand-bgSec py-12 mb-12 relative overflow-hidden transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-brand-bgSec rounded-2xl border border-brand-border shadow-xl hover:-translate-y-[5px] transition-all duration-300 text-center p-6 flex flex-col h-full">
+                        <div
+                            class="w-16 h-16 bg-brand-bg rounded-full flex items-center justify-center mx-auto mb-4 border border-brand-accent/30 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                            <i data-lucide="award" class="h-8 w-8 text-brand-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-text mb-2">Award Winning</h3>
+                        <p class="text-brand-textSec text-sm">Voted "Best Salon" for 3 consecutive years
+                            in our city.</p>
+                    </div>
+                    <div class="bg-brand-bgSec rounded-2xl border border-brand-border shadow-xl hover:-translate-y-[5px] transition-all duration-300 text-center p-6 flex flex-col h-full">
+                        <div
+                            class="w-16 h-16 bg-brand-bg rounded-full flex items-center justify-center mx-auto mb-4 border border-brand-accent/30 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                            <i data-lucide="users" class="h-8 w-8 text-brand-accent"></i>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-brand-text mb-2">Expert Stylists</h3>
+                            <p class="text-brand-textSec text-sm">15+ certified professionals trained in the
+                                latest global beauty trends.</p>
+                        </div>
+                    </div>
+                    <div class="bg-brand-bgSec rounded-2xl border border-brand-border shadow-xl hover:-translate-y-[5px] transition-all duration-300 text-center p-6 flex flex-col h-full">
+                        <div
+                            class="w-16 h-16 bg-brand-bg rounded-full flex items-center justify-center mx-auto mb-4 border border-brand-accent/30 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                            <i data-lucide="heart" class="h-8 w-8 text-brand-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-text mb-2">10,000+ Happy Clients</h3>
+                        <p class="text-brand-textSec text-sm">A growing family of loyal clients who trust us
+                            with their beauty needs.</p>
+                    </div>
+                    <div class="bg-brand-bgSec rounded-2xl border border-brand-border shadow-xl hover:-translate-y-[5px] transition-all duration-300 text-center p-6 flex flex-col h-full">
+                        <div
+                            class="w-16 h-16 bg-brand-bg rounded-full flex items-center justify-center mx-auto mb-4 border border-brand-accent/30 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                            <i data-lucide="sparkles" class="h-8 w-8 text-brand-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-text mb-2">Premium Products</h3>
+                        <p class="text-brand-textSec text-sm">Only the finest global beauty brands and
+                            cruelty-free products used.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Story Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="assets/images/salon-team.png"
+                        alt="Our Expert Salon Team"
+                        class="rounded-xl shadow-[0_0_30px_rgba(212,175,55,0.15)] border border-brand-border mx-auto" />
+                </div>
+                <div class="text-center">
+                    <h2 class="text-3xl font-heading font-bold text-brand-text mb-6">Our Expertise</h2>
+                    <p class="text-brand-textSec mb-6 leading-relaxed">
+                        At Aura Beauty, we don't just follow trends — we set them. Our team of certified
+                        stylists and beauty experts bring years of international training and passion to every
+                        service. We combine artistry with the latest techniques to deliver results that exceed expectations.
+                    </p>
+                    <div class="flex justify-center">
+                        <ul class="space-y-4 inline-block text-left">
+                            <li class="flex items-center">
+                                <span
+                                    class="h-6 w-6 rounded-full bg-brand-accent/20 flex items-center justify-center me-3 mt-0.5 shrink-0">
+                                    <span class="h-2 w-2 rounded-full bg-brand-accent"></span>
+                                </span>
+                                <span class="text-brand-textSec">Internationally trained master stylists & colorists</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="h-6 w-6 rounded-full bg-brand-accent/20 flex items-center justify-center me-3 mt-0.5 shrink-0">
+                                    <span class="h-2 w-2 rounded-full bg-brand-accent"></span>
+                                </span>
+                                <span class="text-brand-textSec">Premium organic and cruelty-free product lines</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="h-6 w-6 rounded-full bg-brand-accent/20 flex items-center justify-center me-3 mt-0.5 shrink-0">
+                                    <span class="h-2 w-2 rounded-full bg-brand-accent"></span>
+                                </span>
+                                <span class="text-brand-textSec">Personalized consultations for every client</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="h-6 w-6 rounded-full bg-brand-accent/20 flex items-center justify-center me-3 mt-0.5 shrink-0">
+                                    <span class="h-2 w-2 rounded-full bg-brand-accent"></span>
+                                </span>
+                                <span class="text-brand-textSec">Hygiene-first approach with sterilized tools & equipment</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Values Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-heading font-bold text-brand-text mb-4">Our Core Values</h2>
+                <p class="text-brand-textSec max-w-2xl mx-auto">The principles that guide everything we do and every interaction we have with our valued clients.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-bgSec border border-brand-border p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="shield-check" class="h-10 w-10 text-brand-accent mb-4"></i>
+                    <h3 class="text-xl font-bold text-brand-text mb-3">Integrity & Transparency</h3>
+                    <p class="text-brand-textSec text-sm leading-relaxed">We believe in honest recommendations. We will only suggest services and products that genuinely benefit your hair and skin.</p>
+                </div>
+                <div class="bg-brand-bgSec border border-brand-border p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="leaf" class="h-10 w-10 text-brand-accent mb-4"></i>
+                    <h3 class="text-xl font-bold text-brand-text mb-3">Sustainable Beauty</h3>
+                    <p class="text-brand-textSec text-sm leading-relaxed">We prioritize eco-friendly, cruelty-free, and sustainable products because looking good shouldn't harm the planet.</p>
+                </div>
+                <div class="bg-brand-bgSec border border-brand-border p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="sparkle" class="h-10 w-10 text-brand-accent mb-4"></i>
+                    <h3 class="text-xl font-bold text-brand-text mb-3">Continuous Innovation</h3>
+                    <p class="text-brand-textSec text-sm leading-relaxed">The beauty industry evolves rapidly, and so do we. Our team undergoes regular training to master the latest techniques.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Story & Milestones Timeline -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+            <div class="text-center mb-12">
+                <span class="text-brand-accent font-bold uppercase tracking-widest text-sm mb-2 block">Our Heritage</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-brand-text mb-4">A Decade of Excellence</h2>
+                <p class="text-brand-textSec max-w-2xl mx-auto">From humble beginnings to an award-winning luxury salon landmark.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-brand-bgSec border border-brand-border p-6 rounded-2xl relative border-t-4 border-t-brand-accent">
+                    <span class="text-brand-accent font-heading font-bold text-3xl mb-2 block">2010</span>
+                    <h3 class="text-lg font-bold text-brand-text mb-2">Grand Opening</h3>
+                    <p class="text-brand-textSec text-sm">Opened our first 3-chair boutique salon in the heart of Fashion District.</p>
+                </div>
+                <div class="bg-brand-bgSec border border-brand-border p-6 rounded-2xl relative border-t-4 border-t-brand-accent">
+                    <span class="text-brand-accent font-heading font-bold text-3xl mb-2 block">2016</span>
+                    <h3 class="text-lg font-bold text-brand-text mb-2">Luxury Sanctuary</h3>
+                    <p class="text-brand-textSec text-sm">Expanded into a 3,000 sq.ft. luxury day spa with dedicated bridal lounges.</p>
+                </div>
+                <div class="bg-brand-bgSec border border-brand-border p-6 rounded-2xl relative border-t-4 border-t-brand-accent">
+                    <span class="text-brand-accent font-heading font-bold text-3xl mb-2 block">2021</span>
+                    <h3 class="text-lg font-bold text-brand-text mb-2">Best Salon Award</h3>
+                    <p class="text-brand-textSec text-sm">Voted #1 Salon & Beauty Parlour for outstanding service & client care.</p>
+                </div>
+                <div class="bg-brand-bgSec border border-brand-border p-6 rounded-2xl relative border-t-4 border-t-brand-accent">
+                    <span class="text-brand-accent font-heading font-bold text-3xl mb-2 block">2026</span>
+                    <h3 class="text-lg font-bold text-brand-text mb-2">Global Standards</h3>
+                    <p class="text-brand-textSec text-sm">Celebrating over 10,000 satisfied clients with 15+ certified master stylists.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hygiene & Luxury Promise Banner -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-8">
+            <div class="bg-gradient-to-r from-brand-bgSec via-brand-bgSec to-brand-bg border border-brand-border rounded-3xl p-10 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+                <div class="max-w-2xl">
+                    <span class="text-brand-accent font-bold uppercase tracking-wider text-xs mb-2 block">Safety First</span>
+                    <h2 class="text-3xl font-heading font-bold text-brand-text mb-4">Our Hospital-Grade Hygiene Standard</h2>
+                    <p class="text-brand-textSec leading-relaxed">
+                        Every tool undergoes medical-grade UV sterilization, and all capes & towels are single-use laundered for your ultimate peace of mind. Experience luxury in total safety.
+                    </p>
+                </div>
+                <a href="appointments.html" class="inline-flex items-center justify-center rounded-full bg-brand-accent text-white px-8 py-4 font-bold whitespace-nowrap shadow-neon hover:bg-brand-accentSec transition-all duration-300">
+                    Book VIP Session
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-bg border-t border-brand-border pt-16 pb-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center cursor-pointer">
+                        <img src="assets/images/new-logo.jpg" alt="Aura Beauty Logo" width="40" height="40" style="max-height:40px; width:auto;" class="h-10 w-10 object-contain">
+                        <span class="ms-3 text-2xl font-heading font-bold text-brand-text tracking-wide">
+                            Aura<span class="text-brand-accent">Beauty</span>
+                        </span>
+                    </a>
+                    <p class="text-brand-textSec text-sm leading-relaxed">
+                        Your premier destination for expert hair styling, skin care, and complete beauty
+                        transformations. Look your best, feel your best.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-brand-text font-bold mb-4 inline-block pb-1">Quick
+                        Links</h3>
+                    <ul class="space-y-2 text-sm text-brand-textSec">
+                        <li><a href="about.html" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">About Us</a></li>
+                        <li><a href="about.html" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Our Stylists</a>
+                        </li>
+                        <li><a href="services.html" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Services</a>
+                        </li>
+                        <li><a href="contact.html" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Contact Support</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-brand-text font-bold mb-4 inline-block pb-1">Services
+                    </h3>
+                    <ul class="space-y-2 text-sm text-brand-textSec">
+                        <li><a href="services.html?category=Hair Care" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Hair Care</a></li>
+                        <li><a href="services.html?category=Nail Treatments" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Nail Treatments</a></li>
+                        <li><a href="services.html?category=Skin Care" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Skin Care</a></li>
+                        <li><a href="services.html?category=Makeup" class="text-brand-textSec hover:text-brand-accent hover:translate-x-1 inline-block transition-all duration-300">Makeup & Bridal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class=\"text-brand-text font-bold mb-4 inline-block pb-1\">Contact Us
+                    </h3>
+                    <ul class="space-y-4 text-sm text-brand-textSec">
+                        <li class="flex items-start">
+                            <i data-lucide="map-pin" class="h-5 w-5 text-brand-accent me-2 shrink-0"></i>
+                            <span>123 Beauty Blvd, Fashion District, Style City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="h-5 w-5 text-brand-accent me-2 shrink-0"></i>
+                            <span>+1 (800) 555-0199</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="h-5 w-5 text-brand-accent me-2 shrink-0"></i>
+                            <span>booking@glamoursalon.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-brand-textSec text-sm">© 2026 Aura Beauty. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-brand-textSec mt-4 md:mt-0">
+                    <a href="#" class="hover:text-brand-text">Privacy Policy</a>
+                    <a href="#" class="hover:text-brand-text">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

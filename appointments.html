@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment | Aura Beauty</title>
+    <meta name="description"
+        content="Schedule your diagnostic test at Aura Beauty in less than 2 minutes. Secure and convenient booking.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Lexend+Deca:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/compiled.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/new-logo.jpg">
+
+</head>
+
+<body class="bg-brand-bg text-brand-text transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav
+        class="sticky top-0 z-50 bg-brand-bg border-b border-brand-border transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center cursor-pointer shrink-0">
+                    <img src="assets/images/new-logo.jpg" alt="Aura Beauty Logo" width="40" height="40" style="max-height:40px; width:auto;" class="h-10 w-10 object-contain">
+                    <span class="ms-3 text-2xl font-heading font-bold text-brand-text tracking-wide whitespace-nowrap">
+                        Aura<span class="text-brand-accent">Beauty</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu (Centered) -->
+                <div class="hidden min-[1100px]:flex items-center justify-center flex-1">
+                    <div class="flex items-center gap-6 lg:gap-8">
+                        <a href="index.html" class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">Home<span class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="about.html"
+                            class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            About
+                            <span
+                                class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="services.html" class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            Services
+                            <span class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="gallery.html" class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            Gallery
+                            <span class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="contact.html" class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            Contact
+                            <span class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="hidden min-[1100px]:flex items-center space-x-4 shrink-0">
+                    <button id="theme-toggle"
+                        class="p-2 rounded-full text-brand-textSec hover:text-brand-accent hover:bg-brand-bgSec transition-colors theme-icon"
+                        aria-label="Toggle Theme">
+                    </button>
+                    
+                    <a href="appointments.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong whitespace-nowrap">Book
+                        Now</a>
+                    <a href="signup.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-text hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong whitespace-nowrap">Sign
+                        Up</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-me-2 flex min-[1100px]:hidden items-center space-x-4">
+                    <button id="menu-toggle" aria-label="Toggle Menu"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-brand-textSec hover:text-brand-text hover:bg-brand-bgSec focus:outline-none">
+                        <i data-lucide="menu" id="menu-open-icon" class="block h-8 w-8 text-brand-accent"></i>
+                        <i data-lucide="x" id="menu-close-icon" class="hidden h-8 w-8 text-brand-accent"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden min-[1100px]:hidden absolute top-20 start-0 w-full h-screen bg-black/50 z-40">
+            <div
+                class="absolute end-0 top-0 w-64 h-full bg-brand-bgSec shadow-2xl p-6 flex flex-col space-y-6 transform transition-transform duration-300 border-s border-brand-border overflow-y-auto">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Home</a>
+                    <a href="about.html" class="text-lg font-medium text-brand-textSec hover:text-brand-accent">About</a>
+                    <a href="services.html" class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Services</a>
+                    <a href="gallery.html" class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Gallery</a>
+                    <a href="contact.html" class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Contact</a>
+                </div>
+
+                <div class="pt-4 border-t border-brand-border flex flex-col space-y-3">
+                    <a href="appointments.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong text-center">Book
+                        Now</a>
+                    <a href="signup.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-text hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong text-center">Sign
+                        Up</a>
+                    <div class="flex justify-center items-center pt-2">
+                        <button id="mobile-theme-toggle"
+                            class="p-2 rounded-full text-brand-textSec hover:text-brand-accent hover:bg-brand-bgSec transition-colors theme-icon flex items-center justify-center">
+                            <!-- Icon will be inserted by JS -->
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="min-h-screen bg-brand-bg py-12 transition-colors duration-300">
+        <!-- Hero Section -->
+        <div
+            class="hero-section relative min-h-[55vh] md:min-h-[60vh] lg:min-h-[80vh] flex flex-col items-center justify-center mb-12 overflow-hidden rounded-3xl mx-4 sm:mx-6 lg:mx-8 border border-brand-border text-center">
+            <!-- Background Image Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/salon-cta-bg.png" alt="Aura Beauty Booking"
+                    class="w-full h-full object-cover opacity-50 transition-opacity">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-brand-bgSec/70">
+                </div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col justify-center items-center text-center">
+                <h2 class="hero-title text-3xl md:text-5xl font-heading font-bold text-white drop-shadow-md mb-4">Book an Appointment</h2>
+                <p class="hero-desc text-gray-200 max-w-2xl mx-auto drop-shadow">Schedule your appointment and connect with our Beauty Personal Care Resource & Knowledge Network.</p>
+            </div>
+        </div>
+
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="bg-brand-bgSec/40 border border-brand-accent/20 p-8 rounded-[24px] shadow-xl">
+                <form id="appointment-form" class="space-y-6">
+                    <!-- Personal Info -->
+                    <div>
+                        <h3
+                            class="text-lg font-bold text-brand-accent mb-4 border-b border-brand-border pb-2 flex items-center">
+                            <i data-lucide="user" class="me-2 h-5 w-5"></i> Patient Details
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-brand-textSec mb-1">Full Name</label>
+                                <input required name="fullName" type="text"
+                                    class="w-full bg-brand-bg border border-brand-border rounded p-3 text-brand-text focus:border-brand-accent focus:outline-none"
+                                    placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-brand-textSec mb-1">Mobile Number</label>
+                                <input required name="phone" type="tel"
+                                    class="w-full bg-brand-bg border border-brand-border rounded p-3 text-brand-text focus:border-brand-accent focus:outline-none"
+                                    placeholder="+1 (555) 000-0000">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-brand-textSec mb-1">Date of Birth</label>
+                                <input required name="dob" type="date"
+                                    class="w-full bg-brand-bg border border-brand-border rounded p-3 text-brand-text focus:border-brand-accent focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-brand-textSec mb-1">Gender</label>
+                                <select name="gender"
+                                    class="w-full bg-brand-bg border border-brand-border rounded p-3 text-brand-text focus:border-brand-accent focus:outline-none">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Selection -->
+                    <div>
+                        <h3
+                            class="text-lg font-bold text-brand-accent mb-4 border-b border-brand-border pb-2 flex items-center">
+                            <i data-lucide="check-circle" class="me-2 h-5 w-5"></i> Test Selection
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-brand-textSec mb-1">Select Test</label>
+                                <select required id="test-select" name="testId"
+                                    class="w-full bg-brand-bg border border-brand-border rounded p-3 text-brand-text focus:border-brand-accent focus:outline-none">
+                                    <option value="">-- Choose a Test --</option>
+                                    <option value="test-1">Full Body Checkup ($99)</option>
+                                    <option value="test-2">Cardiac Profile ($149)</option>
+                                    <option value="test-3">Diabetes Screening ($49)</option>
+                                    <option value="test-4">Thyroid Profile ($59)</option>
+                                    <option value="test-5">Vitamin D & B12 ($79)</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-brand-bg p-3 rounded border border-brand-border">
+                                <input type="checkbox" id="homeCollection" name="homeCollection"
+                                    class="h-5 w-5 rounded text-brand-accent focus:ring-brand-accent bg-gray-800 border-gray-600 cursor-pointer"
+                                    onchange="document.getElementById('address-container').classList.toggle('hidden', !this.checked)" />
+                                <label htmlFor="homeCollection"
+                                    class="text-brand-textSec select-none cursor-pointer">Opt for Home Sample Collection
+                                    (+$15)</label>
+                            </div>
+                            <div id="address-container" class="hidden animate-in fade-in slide-in-from-top-2">
+                                <label class="block text-sm font-medium text-brand-textSec mb-1">Address</label>
+                                <textarea name="address" rows="2"
+                                    class="w-full bg-brand-bg border border-brand-border rounded p-3 text-brand-text focus:border-brand-accent focus:outline-none"
+                                    placeholder="Enter full address for collection..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scheduling -->
+                    <div>
+                        <h3
+                            class="text-lg font-bold text-brand-accent mb-4 border-b border-brand-border pb-2 flex items-center">
+                            <i data-lucide="calendar" class="me-2 h-5 w-5"></i> Scheduling
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-brand-textSec mb-1">Preferred Date</label>
+                                <input required name="date" type="date"
+                                    class="w-full bg-brand-bg border border-brand-border rounded p-3 text-brand-text focus:border-brand-accent focus:outline-none" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-brand-textSec mb-1">Preferred Time</label>
+                                <select required name="time"
+                                    class="w-full bg-brand-bg border border-brand-border rounded p-3 text-brand-text focus:border-brand-accent focus:outline-none">
+                                    <option value="">-- Select Slot --</option>
+                                    <option>08:00 AM - 10:00 AM</option>
+                                    <option>10:00 AM - 12:00 PM</option>
+                                    <option>02:00 PM - 04:00 PM</option>
+                                    <option>04:00 PM - 06:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-4 rounded-full bg-brand-accent text-white font-bold text-lg shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] hover:bg-brand-accentSec transition-all duration-300 mt-8">
+                        Confirm Appointment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 z-60 hidden items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div
+            class="relative bg-brand-bgSec border border-brand-border w-full max-w-md p-8 rounded-3xl shadow-2xl animate-in zoom-in fade-in duration-300">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-brand-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="check-circle" class="h-10 w-10 text-brand-accent"></i>
+                </div>
+                <h2 class="text-2xl font-heading font-bold text-brand-text mb-2">Booking Confirmed!</h2>
+                <p class="text-lg text-brand-text mb-2">Thank you, <span id="summary-name"
+                        class="font-bold text-brand-accent"></span>.</p>
+                <p class="text-brand-textSec mb-6">Your appointment ID is <span id="booking-id"
+                        class="font-mono text-brand-text"></span>. We have sent a confirmation SMS to your mobile
+                    number.</p>
+                <div class="flex flex-col gap-3">
+                    <a href="index.html"
+                        class="w-full py-3 rounded-full bg-brand-accent text-white font-bold hover:bg-brand-accentSec transition-colors">Return
+                        to Home</a>
+                    <button onclick="closeModal()"
+                        class="text-brand-textSec hover:text-brand-accent text-sm font-medium">Book Another
+                        Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-brand-bg border-t border-brand-border pt-16 pb-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center cursor-pointer">
+                        <img src="assets/images/new-logo.jpg" alt="Aura Beauty Logo" class="h-10 w-10 object-contain">
+                        <span class="ms-3 text-2xl font-heading font-bold text-brand-text tracking-wide">
+                            Aura<span class="text-brand-accent">Beauty</span>
+                        </span>
+                    </a>
+                    <p class="text-brand-textSec text-sm leading-relaxed">
+                        Your premier destination for expert hair styling, skin care, and complete beauty
+                        transformations. Look your best, feel your best.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class=\"text-brand-text font-bold mb-4 inline-block pb-1\">Quick
+                        Links</h3>
+                    <ul class="space-y-2 text-sm text-brand-textSec">
+                        <li><a href="about.html" class=\"text-brand-textSec\">About Us</a></li>
+                        <li><a href="about.html" class=\"text-brand-textSec\">Our Stylists</a>
+                        </li>
+                        <li><a href="services.html" class=\"text-brand-textSec\">Services</a>
+                        </li>
+                        <li><a href="contact.html" class=\"text-brand-textSec\">Contact Support</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class=\"text-brand-text font-bold mb-4 inline-block pb-1\">Services
+                    </h3>
+                    <ul class="space-y-2 text-sm text-brand-textSec">
+                        <li><a href="services.html?category=Hair Care"
+                                class=\"text-brand-textSec\">Hair Care</a></li>
+                        <li><a href="services.html?category=Nail Treatments"
+                                class=\"text-brand-textSec\">Nail Treatments</a></li>
+                        <li><a href="services.html?category=Cardiac"
+                                class=\"text-brand-textSec\">Cardiac Profile</a></li>
+                        <li><a href="services.html?category=Diabetes"
+                                class=\"text-brand-textSec\">Diabetes Care</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class=\"text-brand-text font-bold mb-4 inline-block pb-1\">Contact Us
+                    </h3>
+                    <ul class="space-y-4 text-sm text-brand-textSec">
+                        <li class="flex items-start">
+                            <i data-lucide="map-pin" class="h-5 w-5 text-brand-accent me-2 shrink-0"></i>
+                            <span>123 Beauty Blvd, Fashion District, Style City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="h-5 w-5 text-brand-accent me-2 shrink-0"></i>
+                            <span>+1 (800) 555-0199</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="h-5 w-5 text-brand-accent me-2 shrink-0"></i>
+                            <span>booking@glamoursalon.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-brand-textSec text-sm">© 2026 Aura Beauty. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-brand-textSec mt-4 md:mt-0">
+                    <a href="#" class="hover:text-brand-text">Privacy Policy</a>
+                    <a href="#" class="hover:text-brand-text">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+
+        // Handle URL params for test selection
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const testId = params.get('testId');
+            if (testId) {
+                const select = document.getElementById('test-select');
+                if (select) select.value = testId;
+            }
+        });
+
+        document.getElementById('appointment-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = this.fullName.value;
+            document.getElementById('summary-name').innerText = name;
+            document.getElementById('booking-id').innerText = '#BP-' + Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function closeModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            document.getElementById('appointment-form').reset();
+            document.getElementById('address-container').classList.add('hidden');
+        }
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

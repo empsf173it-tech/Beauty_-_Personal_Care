@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <link rel="icon" type="image/png" href="assets/images/new-logo.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Aura Beauty</title>
+    <meta name="description" content="Login to your Aura Beauty account.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Lexend+Deca:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/compiled.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Form specific styling for button borders */
+        .form-btn {
+            border: 1px solid var(--brand-accent);
+            transition: all 0.3s ease;
+        }
+        .form-btn:hover {
+            background-color: var(--brand-accent);
+            color: var(--brand-bg);
+            transform: translateY(-2px);
+        }
+        .social-btn {
+            border: 1px solid var(--brand-border);
+            transition: all 0.3s ease;
+        }
+        .social-btn:hover {
+            background-color: var(--brand-bgSec);
+            border-color: var(--brand-accent);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-accent selection:text-brand-bg min-h-screen flex flex-col">
+
+    <main class="flex-grow flex flex-col items-center justify-center p-4 py-12">
+        <!-- Top Right Controls -->
+        <div class="absolute top-6 end-6 flex items-center space-x-4 z-50">
+            <button id="theme-toggle" class="p-2 rounded-full border border-brand-border text-brand-textSec hover:text-brand-accent hover:border-brand-accent hover:bg-brand-bgSec transition-all theme-icon" aria-label="Toggle Theme">
+            </button>
+            
+        </div>
+
+        <div class="w-full max-w-md bg-brand-bgSec/60 backdrop-blur-md border border-brand-border rounded-3xl p-8 shadow-2xl animate-in zoom-in-95 duration-500">
+            
+            <div class="text-center mb-8">
+                <a href="index.html" class="flex-shrink-0 flex items-center justify-center gap-2 group mb-6">
+                    <img src="assets/images/new-logo.jpg" alt="Aura Beauty Logo" width="40" height="40" style="max-height:40px; width:auto;" class="h-10 w-10 object-contain">
+                    <span class="font-heading font-bold text-2xl tracking-tight text-brand-text">
+                        Aura<span class="text-brand-accent">Beauty</span>
+                    </span>
+                </a>
+                <h1 class="text-xl font-heading font-bold text-brand-text mb-2">Welcome Back</h1>
+                <p class="text-brand-textSec text-sm">Please enter your details to sign in.</p>
+            </div>
+
+            <form class="space-y-5" onsubmit="event.preventDefault();">
+                <div>
+                    <label class="block text-sm font-medium text-brand-textSec mb-1">Email</label>
+                    <input type="email" class="w-full bg-brand-bg border border-brand-border rounded-lg p-3 text-brand-text focus:border-brand-accent focus:outline-none transition-colors" placeholder="Enter your email" required>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-brand-textSec mb-1">Password</label>
+                    <div class="relative">
+                        <input type="password" id="password" class="w-full bg-brand-bg border border-brand-border rounded-lg p-3 text-brand-text focus:border-brand-accent focus:outline-none transition-colors" placeholder="••••••••" required>
+                        <button type="button" onclick="togglePassword('password', 'eye-icon')" class="icon-btn absolute inset-y-0 end-0 pe-3 flex items-center text-brand-textSec hover:text-brand-accent">
+                            <i data-lucide="eye" id="eye-icon" class="h-5 w-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <label class="flex items-center">
+                        <input type="checkbox" class="rounded border-brand-border bg-brand-bg text-brand-accent focus:ring-brand-accent h-4 w-4">
+                        <span class="ms-2 text-sm text-brand-textSec">Remember me</span>
+                    </label>
+                    <a href="#" class="text-sm font-medium text-brand-accent hover:underline">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="w-full form-btn py-3 rounded-xl bg-brand-accent text-white font-bold shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)]">
+                    Sign In
+                </button>
+            </form>
+
+            <div class="mt-6 flex items-center justify-center">
+                <span class="w-full border-t border-brand-border"></span>
+                <span class="px-3 text-sm text-brand-textSec whitespace-nowrap">Or continue with</span>
+                <span class="w-full border-t border-brand-border"></span>
+            </div>
+
+            <div class="mt-6 grid grid-cols-2 gap-4">
+                <button type="button" class="social-btn w-full inline-flex justify-center items-center py-2.5 px-4 rounded-xl bg-brand-bg text-brand-text text-sm font-medium">
+                    <svg class="h-5 w-5 me-2" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    Google
+                </button>
+                <button type="button" class="social-btn w-full inline-flex justify-center items-center py-2.5 px-4 rounded-xl bg-brand-bg text-brand-text text-sm font-medium">
+                    <svg class="h-5 w-5 me-2" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                    Apple
+                </button>
+            </div>
+
+            <p class="mt-8 text-center text-sm text-brand-textSec">
+                Don't have an account? 
+                <a href="signup.html" class="font-bold text-brand-accent hover:underline">Sign up</a>
+            </p>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+        
+        // Password visibility toggle
+        function togglePassword(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.setAttribute('data-lucide', 'eye-off');
+            } else {
+                input.type = 'password';
+                icon.setAttribute('data-lucide', 'eye');
+            }
+            lucide.createIcons(); // Re-render icon
+        }
+
+        // Theme toggle logic (simplified for standalone page)
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        function updateThemeIcon() {
+            if (html.getAttribute('data-theme') === 'light') {
+                themeToggleBtn.innerHTML = '<i data-lucide="moon" class="h-5 w-5"></i>';
+            } else {
+                themeToggleBtn.innerHTML = '<i data-lucide="sun" class="h-5 w-5"></i>';
+            }
+            lucide.createIcons();
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon();
+        });
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        updateThemeIcon();
+
+        </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

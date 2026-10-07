@@ -1,0 +1,448 @@
+@import "tailwindcss";
+
+:root {
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-bgSec: var(--brand-bgSec);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accentSec: var(--brand-accentSec);
+  --color-brand-text: var(--brand-text);
+  --color-brand-textSec: var(--brand-textSec);
+  --color-brand-border: var(--brand-border);
+  --font-heading: 'Lexend Deca', sans-serif;
+  --shadow-neon: 0 0 10px rgba(212, 175, 55, 0.5);
+  --shadow-neon-strong: 0 0 20px rgba(212, 175, 55, 0.8);
+}
+
+:root {
+  /* Default Dark Mode */
+  --brand-bg: #111111;
+  --brand-bgSec: #1a1a1a;
+  --brand-accent: #d4af37;
+  --brand-accentSec: #c5a059;
+  --brand-text: #FFFFFF;
+  --brand-textSec: #cccccc;
+  --brand-border: #333333;
+}
+
+[data-theme='light'] {
+  --brand-bg: #FDF8F5;
+  --brand-bgSec: #F9F2EB;
+  --brand-accent: #d4af37;
+  --brand-accentSec: #c5a059;
+  --brand-text: #1a1a1a;
+  --brand-textSec: #666666;
+  --brand-border: #e0e0e0;
+}
+
+body {
+  background-color: var(--brand-bg);
+  color: var(--brand-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+}
+
+.font-heading {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.shadow-neon {
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.shadow-neon-strong {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+}
+
+/* Base Tailwind-like Utility overrides */
+.bg-brand-bg {
+  background-color: var(--brand-bg);
+}
+
+.bg-brand-bgSec {
+  background-color: var(--brand-bgSec);
+}
+
+.text-brand-text {
+  color: var(--brand-text);
+}
+
+.text-brand-textSec {
+  color: var(--brand-textSec);
+}
+
+.text-brand-accent {
+  color: var(--brand-accent);
+}
+
+.border-brand-border {
+  border-color: var(--brand-border);
+}
+
+/* Home V2 Specific */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.rotate-y-12 {
+  transform: rotateY(12deg);
+}
+
+/* ========================================
+   Universal Button Styling
+   ======================================== */
+
+/* Smooth transitions for all interactive elements */
+a[class*="rounded-full"][class*="px-"],
+button,
+input[type="submit"] {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Hover lift for interactive elements */
+a[class*="rounded-full"][class*="px-"]:hover,
+button:not(.theme-icon):not(#menu-toggle):hover,
+input[type="submit"]:hover {
+  transform: translateY(-3px) !important;
+}
+
+/* Outlined / bordered buttons - gold border, invert on hover */
+button:not(.theme-icon):not(#menu-toggle):not(.icon-btn):not(.social-btn),
+input[type="submit"] {
+  border: 1px solid var(--brand-accent) !important;
+}
+
+button:not(.theme-icon):not(#menu-toggle):not(.icon-btn):not(.social-btn):hover,
+input[type="submit"]:hover {
+  background-color: var(--brand-accent) !important;
+  color: #111 !important;
+  /* distinct text color on hover for outlined buttons */
+}
+
+/* Gold text utility for hero visibility */
+.hero-gold-text,
+.text-brand-accent-stroke,
+.gold-text-stroke {
+  color: var(--brand-accent) !important;
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+/* ========================================
+   Hero Section Universal Dark Theme Lock
+   ======================================== */
+
+/* Ensure Hero Section ALWAYS maintains dark mode appearance in both Light and Dark themes */
+.hero-section,
+[data-theme='light'] .hero-section {
+  background-color: #111111 !important;
+  color: #ffffff !important;
+}
+
+/* Force hero headings to stay bright WHITE in all themes */
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+.hero-title,
+[data-theme='light'] .hero-section h1,
+[data-theme='light'] .hero-section h2,
+[data-theme='light'] .hero-section h3,
+[data-theme='light'] .hero-title {
+  color: #ffffff !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+/* Force hero subtext to stay bright WHITE in all themes */
+.hero-section p,
+.hero-desc,
+[data-theme='light'] .hero-section p,
+[data-theme='light'] .hero-desc {
+  color: #e5e5e5 !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+/* Force gold accent text in hero sections to stay GOLD in all themes */
+.hero-section .text-brand-accent,
+.hero-section .gold-text-stroke,
+.hero-section .hero-gold-text,
+.hero-section .text-brand-accent-stroke,
+[data-theme='light'] .hero-section .text-brand-accent,
+[data-theme='light'] .hero-section .gold-text-stroke,
+[data-theme='light'] .hero-section .hero-gold-text {
+  color: #d4af37 !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+/* Force badge pills and category pills in hero section to stay dark background with gold/white text */
+.hero-section div[class*="rounded-full"][class*="border-2"],
+.hero-section span[class*="rounded-full"]:not(.bg-brand-accent):not(.text-black),
+[data-theme='light'] .hero-section div[class*="rounded-full"][class*="border-2"],
+[data-theme='light'] .hero-section span[class*="rounded-full"]:not(.bg-brand-accent):not(.text-black) {
+  background-color: #111111 !important;
+  color: #ffffff !important;
+}
+
+.hero-section span[class*="rounded-full"].bg-brand-accent,
+.hero-section span[class*="rounded-full"].text-black,
+[data-theme='light'] .hero-section span[class*="rounded-full"].bg-brand-accent,
+[data-theme='light'] .hero-section span[class*="rounded-full"].text-black {
+  background-color: var(--brand-accent) !important;
+  color: #000000 !important;
+}
+
+/* Force stat cards inside hero section to stay dark background with white text & gold numbers */
+.hero-section div[class*="bg-brand-bgSec"],
+[data-theme='light'] .hero-section div[class*="bg-brand-bgSec"] {
+  background-color: #1a1a1a !important;
+  border-color: #333333 !important;
+}
+
+.hero-section div[class*="bg-brand-bgSec"] span:not(.text-black),
+[data-theme='light'] .hero-section div[class*="bg-brand-bgSec"] span:not(.text-black) {
+  color: #ffffff !important;
+}
+
+.hero-section div[class*="bg-brand-bgSec"] span.text-brand-accent,
+[data-theme='light'] .hero-section div[class*="bg-brand-bgSec"] span.text-brand-accent {
+  color: #d4af37 !important;
+}
+
+/* Force outlined hero buttons to stay dark background with crisp WHITE text */
+.hero-section a:not([class*="bg-brand-accent"]),
+.hero-section a.text-brand-text:not([class*="bg-brand-accent"]),
+[data-theme='light'] .hero-section a:not([class*="bg-brand-accent"]),
+[data-theme='light'] .hero-section a.text-brand-text:not([class*="bg-brand-accent"]) {
+  background-color: rgba(17, 17, 17, 0.85) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Hover state for outlined hero buttons - fills gold with black text */
+.hero-section a:not([class*="bg-brand-accent"]):hover,
+.hero-section a.text-brand-text:not([class*="bg-brand-accent"]):hover,
+[data-theme='light'] .hero-section a:not([class*="bg-brand-accent"]):hover,
+[data-theme='light'] .hero-section a.text-brand-text:not([class*="bg-brand-accent"]):hover {
+  background-color: var(--brand-accent) !important;
+  color: #000000 !important;
+  border-color: var(--brand-accent) !important;
+}
+
+/* Universal High Contrast Hero Text Lock for all child text elements */
+.hero-section .text-brand-text,
+[data-theme='light'] .hero-section .text-brand-text {
+  color: #ffffff !important;
+}
+
+.hero-section .text-brand-textSec,
+[data-theme='light'] .hero-section .text-brand-textSec {
+  color: #d1d5db !important;
+}
+
+/* Primary filled CTA button inside hero sections */
+.hero-section a.bg-brand-accent,
+.hero-section button.bg-brand-accent,
+[data-theme='light'] .hero-section a.bg-brand-accent,
+[data-theme='light'] .hero-section button.bg-brand-accent {
+  background-color: var(--brand-accent) !important;
+  color: #000000 !important;
+}
+
+.hero-section a.bg-brand-accent:hover,
+.hero-section button.bg-brand-accent:hover,
+[data-theme='light'] .hero-section a.bg-brand-accent:hover,
+[data-theme='light'] .hero-section button.bg-brand-accent:hover {
+  background-color: #b8972e !important;
+  color: #000000 !important;
+}
+
+/* Specific overrides for CTA buttons */
+a[class*="bg-brand-accent"]:hover,
+button[class*="bg-brand-accent"]:hover,
+.bg-brand-accent:hover {
+  background-color: #b8972e !important;
+  /* a noticeably darker gold for active state */
+}
+
+/* ========================================
+   Signature Packages Tab View (768px) & Card Alignment
+   ======================================== */
+
+/* Package Card Feature List - Center-Left Alignment System */
+.package-card ul {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: left !important;
+}
+
+.package-card ul li {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  gap: 0.75rem !important;
+  width: 100% !important;
+}
+
+@media (max-width: 1023px) {
+  .packages-grid {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    max-width: 680px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .packages-grid .package-card {
+    width: 100% !important;
+    max-width: 620px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .packages-grid .package-card .flex-1 {
+    align-items: center !important;
+  }
+
+  .packages-grid .package-card span[class*="rounded-full"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .packages-grid .package-card div[class*="flex items-baseline"] {
+    justify-content: center !important;
+  }
+
+  .packages-grid .package-card a[href*="appointments.html"] {
+    max-width: 380px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+.package-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Global Card Hover Effect with High Contrast */
+.bg-brand-bgSec.rounded-2xl:hover,
+.bg-brand-bgSec.rounded-3xl:hover,
+.bg-brand-bgSec\/40.rounded-2xl:hover,
+.bg-brand-bgSec\/40.rounded-3xl:hover,
+.package-card:hover {
+  background-color: var(--brand-accent) !important;
+  border-color: var(--brand-accent) !important;
+}
+
+.bg-brand-bgSec.rounded-2xl:hover *,
+.bg-brand-bgSec.rounded-3xl:hover *,
+.bg-brand-bgSec\/40.rounded-2xl:hover *,
+.bg-brand-bgSec\/40.rounded-3xl:hover *,
+.package-card:hover * {
+  color: #000 !important;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.bg-brand-bgSec.rounded-2xl:hover .bg-brand-bg svg,
+.bg-brand-bgSec.rounded-2xl:hover .bg-brand-bg svg *,
+.bg-brand-bgSec.rounded-3xl:hover .bg-brand-bg svg,
+.bg-brand-bgSec.rounded-3xl:hover .bg-brand-bg svg *,
+.bg-brand-bgSec\/40.rounded-2xl:hover .bg-brand-bg svg,
+.bg-brand-bgSec\/40.rounded-2xl:hover .bg-brand-bg svg *,
+.bg-brand-bgSec\/40.rounded-3xl:hover .bg-brand-bg svg,
+.bg-brand-bgSec\/40.rounded-3xl:hover .bg-brand-bg svg *,
+.package-card:hover .bg-brand-bg svg,
+.package-card:hover .bg-brand-bg svg *,
+.bg-brand-bgSec.rounded-2xl:hover .bg-brand-bg i,
+.bg-brand-bgSec.rounded-3xl:hover .bg-brand-bg i,
+.bg-brand-bgSec\/40.rounded-2xl:hover .bg-brand-bg i,
+.bg-brand-bgSec\/40.rounded-3xl:hover .bg-brand-bg i,
+.package-card:hover .bg-brand-bg i {
+  color: var(--brand-accent) !important;
+  stroke: var(--brand-accent) !important;
+}
+
+/* Invert buttons inside hovered cards for maximum contrast */
+.bg-brand-bgSec.rounded-2xl:hover a[class*="rounded-full"],
+.bg-brand-bgSec.rounded-3xl:hover a[class*="rounded-full"],
+.bg-brand-bgSec\/40.rounded-2xl:hover a[class*="rounded-full"],
+.bg-brand-bgSec\/40.rounded-3xl:hover a[class*="rounded-full"],
+.package-card:hover a[class*="rounded-full"] {
+  background-color: #000 !important;
+  color: var(--brand-accent) !important;
+  border-color: #000 !important;
+}
+
+/* Fix for gallery hover effects that were purged from Tailwind */
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1 !important;
+}
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05) !important;
+}

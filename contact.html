@@ -1,0 +1,533 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Aura Beauty</title>
+    <meta name="description"
+        content="Get in touch with Aura Beauty. We are here to assist you 24/7 with your health inquiries.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Lexend+Deca:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/compiled.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/new-logo.jpg">
+
+</head>
+
+<body class="bg-brand-bg text-brand-text transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-brand-bg border-b border-brand-border transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center cursor-pointer shrink-0">
+                    <img src="assets/images/new-logo.jpg" alt="Aura Beauty Logo" width="40" height="40" style="max-height:40px; width:auto;" class="h-10 w-10 object-contain">
+                    <span class="ms-3 text-2xl font-heading font-bold text-brand-text tracking-wide whitespace-nowrap">
+                        Aura<span class="text-brand-accent">Beauty</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu (Centered) -->
+                <div class="hidden min-[1100px]:flex items-center justify-center flex-1">
+                    <div class="flex items-center gap-6 lg:gap-8">
+                        <a href="index.html"
+                            class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">Home<span
+                                class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="about.html"
+                            class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            About
+                            <span
+                                class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="services.html"
+                            class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            Services
+                            <span
+                                class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="gallery.html"
+                            class="px-3 py-2 text-sm font-medium text-brand-textSec hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            Gallery
+                            <span
+                                class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                        <a href="contact.html"
+                            class="px-3 py-2 text-sm font-medium text-brand-text hover:text-brand-text transition-all duration-300 relative group whitespace-nowrap">
+                            Contact
+                            <span class="absolute bottom-0 start-0 w-full h-0.5 bg-brand-accent transition-transform duration-300"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="hidden min-[1100px]:flex items-center space-x-4 shrink-0">
+                    <button id="theme-toggle"
+                        class="p-2 rounded-full text-brand-textSec hover:text-brand-accent hover:bg-brand-bgSec transition-colors theme-icon"
+                        aria-label="Toggle Theme">
+                    </button>
+                    
+                    <a href="appointments.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong whitespace-nowrap">Book
+                        Now</a>
+                    <a href="signup.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-text hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong whitespace-nowrap">Sign
+                        Up</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-me-2 flex min-[1100px]:hidden items-center space-x-4">
+                    <button id="menu-toggle" aria-label="Toggle Menu"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-brand-textSec hover:text-brand-text hover:bg-brand-bgSec focus:outline-none">
+                        <i data-lucide="menu" id="menu-open-icon" class="block h-8 w-8 text-brand-accent"></i>
+                        <i data-lucide="x" id="menu-close-icon" class="hidden h-8 w-8 text-brand-accent"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden min-[1100px]:hidden absolute top-20 start-0 w-full h-screen bg-black/50 z-40">
+            <div
+                class="absolute end-0 top-0 w-64 h-full bg-brand-bgSec shadow-2xl p-6 flex flex-col space-y-6 transform transition-transform duration-300 border-s border-brand-border overflow-y-auto">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Home</a>
+                    <a href="about.html"
+                        class="text-lg font-medium text-brand-textSec hover:text-brand-accent">About</a>
+                    <a href="services.html"
+                        class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Services</a>
+                    <a href="gallery.html"
+                        class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Gallery</a>
+                    <a href="contact.html"
+                        class="text-lg font-medium text-brand-textSec hover:text-brand-accent">Contact</a>
+                </div>
+
+                <div class="pt-4 border-t border-brand-border flex flex-col space-y-3">
+                    <a href="appointments.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong text-center">Book
+                        Now</a>
+                    <a href="signup.html"
+                        class="px-5 py-2 rounded-full border border-brand-accent text-brand-text hover:bg-brand-accent hover:text-white transition-all duration-300 text-sm font-bold shadow-neon hover:shadow-neon-strong text-center">Sign
+                        Up</a>
+                    <div class="flex justify-center items-center pt-2">
+                        <button id="mobile-theme-toggle"
+                            class="p-2 rounded-full text-brand-textSec hover:text-brand-accent hover:bg-brand-bgSec transition-colors theme-icon flex items-center justify-center">
+                            <!-- Icon will be inserted by JS -->
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="min-h-screen bg-brand-bg pt-4 pb-12 transition-colors duration-300">
+        <!-- Unique Contact Hero Banner -->
+        <div
+            class="hero-section relative min-h-[55vh] md:min-h-[60vh] lg:min-h-[80vh] py-12 lg:py-16 flex flex-col items-center justify-center mb-12 overflow-hidden rounded-3xl mx-4 sm:mx-6 lg:mx-8 border border-brand-border text-center">
+            <!-- Background Image Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/salon-cta-bg.png" alt="Aura Beauty Contact"
+                    class="w-full h-full object-cover opacity-50 transition-opacity">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-brand-bgSec/70">
+                </div>
+            </div>
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 text-left space-y-4">
+                    <div
+                        class="inline-flex items-center space-x-2 bg-brand-bg border-2 border-emerald-500 rounded-full px-5 py-2 text-emerald-500 dark:text-emerald-400 text-xs font-extrabold uppercase tracking-wider shadow-lg">
+                        <span class="relative flex h-2.5 w-2.5 me-1">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        <span>Open Today • 9:00 AM – 9:00 PM</span>
+                    </div>
+                    <h1 class="hero-title text-4xl md:text-5xl font-heading font-bold text-brand-text drop-shadow-md">
+                        Connect with <span class="text-brand-accent gold-text-stroke">Aura Beauty</span>
+                    </h1>
+                    <p class="hero-desc text-lg text-brand-text font-semibold max-w-xl leading-relaxed drop-shadow-xs">
+                        Have a question about our services or looking to access our Beauty Personal Care Resource & Knowledge Network? Our team is at your service.
+                    </p>
+                </div>
+
+                <!-- Quick Connect Info Pills -->
+                <div class="lg:col-span-5 space-y-3">
+                    <div
+                        class="flex items-center p-4 bg-brand-bgSec border-2 border-brand-accent/60 rounded-2xl shadow-xl hover:border-brand-accent transition-all">
+                        <div class="p-3 bg-brand-accent/20 rounded-xl me-4 shrink-0 shadow-inner">
+                            <i data-lucide="phone-call" class="h-6 w-6 text-brand-accent"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-brand-textSec font-bold block">Direct Concierge Hotline</span>
+                            <span class="text-base md:text-lg font-extrabold text-brand-text block">+1 (800) 555-0199</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-center p-4 bg-brand-bgSec border-2 border-brand-accent/60 rounded-2xl shadow-xl hover:border-brand-accent transition-all">
+                        <div class="p-3 bg-brand-accent/20 rounded-xl me-4 shrink-0 shadow-inner">
+                            <i data-lucide="map-pin" class="h-6 w-6 text-brand-accent"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-brand-textSec font-bold block">Flagship Location</span>
+                            <span class="text-base md:text-lg font-extrabold text-brand-text block">123 Beauty Blvd, Style City</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+                <!-- Contact Form -->
+                <div class="bg-brand-bgSec/40 border border-brand-border p-8 rounded-[24px]">
+                    <h3 class="text-xl font-bold text-brand-text mb-6 text-center">Send us a Message</h3>
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-brand-textSec mb-1">Name</label>
+                                <input type="text"
+                                    class="w-full bg-brand-bg border border-brand-border rounded p-3 text-brand-text focus:border-brand-accent focus:outline-none"
+                                    placeholder="Your Name" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-brand-textSec mb-1">Email</label>
+                                <input type="email"
+                                    class="w-full bg-brand-bg border border-brand-border rounded p-3 text-brand-text focus:border-brand-accent focus:outline-none"
+                                    placeholder="your@email.com" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-brand-textSec mb-1">Subject</label>
+                            <input type="text"
+                                class="w-full bg-brand-bg border border-brand-border rounded p-3 text-brand-text focus:border-brand-accent focus:outline-none"
+                                placeholder="Inquiry about..." required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-brand-textSec mb-1">Message</label>
+                            <textarea rows="4"
+                                class="w-full bg-brand-bg border border-brand-border rounded p-3 text-brand-text focus:border-brand-accent focus:outline-none"
+                                placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full py-4 rounded-full bg-brand-accent text-white font-bold shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] hover:bg-brand-accentSec transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+
+                    <!-- Follow Us Section -->
+                    <div class="mt-8 pt-8 border-t border-brand-border/50 text-center">
+                        <span class="block text-brand-accent text-xs font-bold uppercase tracking-widest mb-4">Follow
+                            Us</span>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#"
+                                class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-brand-textSec hover:text-brand-accent hover:border-brand-accent hover:bg-brand-bgSec hover:scale-110 transition-all duration-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-5 w-5">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                </svg>
+                            </a>
+                            <a href="#"
+                                class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-brand-textSec hover:text-brand-accent hover:border-brand-accent hover:bg-brand-bgSec hover:scale-110 transition-all duration-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-5 w-5">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                                </svg>
+                            </a>
+                            <a href="#"
+                                class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-brand-textSec hover:text-brand-accent hover:border-brand-accent hover:bg-brand-bgSec hover:scale-110 transition-all duration-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-5 w-5">
+                                    <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                                    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                                </svg>
+                            </a>
+                            <a href="#"
+                                class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-brand-textSec hover:text-brand-accent hover:border-brand-accent hover:bg-brand-bgSec hover:scale-110 transition-all duration-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-5 w-5">
+                                    <path
+                                        d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z" />
+                                    <path d="m10 15 5-3-5-3z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <div
+                        class="bg-linear-to-br from-brand-bgSec to-brand-bg border border-brand-border border-s-4 border-s-brand-accent p-8 rounded-2xl text-center">
+                        <div class="flex flex-col items-center space-y-2">
+                            <div class="p-3 bg-brand-bg rounded-lg text-brand-accent"><i data-lucide="map-pin"
+                                    class="h-8 w-8"></i></div>
+                            <div>
+                                <h4 class="font-bold text-brand-text text-lg">Glamour Flagship Salon</h4>
+                                <p class="text-brand-textSec mt-1">123 Beauty Blvd, Style District,<br>Glamour City, ST 90210</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                        <div
+                            class="bg-brand-bgSec/40 border border-brand-border border-s-4 border-s-blue-500 p-6 rounded-2xl flex flex-col items-center">
+                            <div class="mb-4 text-blue-400"><i data-lucide="phone" class="h-6 w-6"></i></div>
+                            <h4 class="font-bold text-brand-text">General Inquiry</h4>
+                            <p class="text-brand-textSec text-sm mt-1">+1 (800) 555-0199</p>
+                        </div>
+                        <div
+                            class="bg-brand-bgSec/40 border border-brand-border border-s-4 border-s-brand-accent p-6 rounded-2xl flex flex-col items-center">
+                            <div class="mb-4 text-brand-accent"><i data-lucide="sparkles" class="h-6 w-6"></i></div>
+                            <h4 class="font-bold text-brand-text">VIP Concierge Desk</h4>
+                            <p class="text-brand-textSec text-sm mt-1">+1 (800) 555-VIP1</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-brand-bgSec/40 border border-brand-border border-s-4 border-s-green-500 p-6 rounded-2xl text-center">
+                        <div class="flex flex-col items-center space-y-2">
+                            <div class="p-2 bg-green-500/10 rounded-full text-green-500"><i data-lucide="message-circle"
+                                    class="h-6 w-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-brand-text">WhatsApp Support</h4>
+                                <p class="text-brand-textSec text-sm">Chat with us: +1 (555) 012-3456</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-brand-bgSec/40 border border-brand-border border-s-4 border-s-purple-500 p-6 rounded-2xl text-center">
+                        <div class="flex flex-col items-center space-y-2">
+                            <div class="p-2 bg-purple-500/10 rounded-full text-purple-500"><i data-lucide="clock"
+                                    class="h-6 w-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-brand-text">Opening Hours</h4>
+                                <p class="text-brand-textSec text-sm">Mon - Sat: 7:00 AM - 9:00 PM</p>
+                                <p class="text-brand-textSec text-sm">Sun: 8:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div class="mb-20 rounded-xl overflow-hidden border border-brand-border h-80 relative group">
+                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                    alt="Map Location"
+                    class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" />
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="bg-brand-bg/90 p-4 rounded-xl flex items-center shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                        <i data-lucide="map-pin" class="text-brand-accent h-6 w-6 me-2"></i>
+                        <span class="font-bold text-brand-text">Locate Us on Map</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-heading font-bold text-brand-text mb-4">Frequently Asked Questions</h2>
+                </div>
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="border border-brand-border rounded-lg bg-brand-bgSec overflow-hidden">
+                        <button
+                            onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon-up').classList.toggle('hidden'); this.querySelector('.faq-icon-down').classList.toggle('hidden');"
+                            class="w-full flex justify-between items-center p-4 text-left hover:bg-brand-bg transition-colors focus:outline-none">
+                            <span class="font-bold text-brand-text">Do I need to fast before my blood test?</span>
+                            <i data-lucide="chevron-down" class="faq-icon-down h-5 w-5 text-brand-textSec"></i>
+                            <i data-lucide="chevron-up" class="faq-icon-up h-5 w-5 text-brand-accent hidden"></i>
+                        </button>
+                        <div
+                            class="hidden p-4 pt-0 text-brand-textSec text-sm border-t border-brand-border mt-2 bg-brand-bg/50">
+                            For tests like Lipid Profile and Fasting Blood Sugar, 10-12 hours of fasting is required.
+                            For others like CBC, no fasting is needed. Please check the specific test details.
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="border border-brand-border rounded-lg bg-brand-bgSec overflow-hidden">
+                        <button
+                            onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon-up').classList.toggle('hidden'); this.querySelector('.faq-icon-down').classList.toggle('hidden');"
+                            class="w-full flex justify-between items-center p-4 text-left hover:bg-brand-bg transition-colors focus:outline-none">
+                            <span class="font-bold text-brand-text">How soon will I get my reports?</span>
+                            <i data-lucide="chevron-down" class="faq-icon-down h-5 w-5 text-brand-textSec"></i>
+                            <i data-lucide="chevron-up" class="faq-icon-up h-5 w-5 text-brand-accent hidden"></i>
+                        </button>
+                        <div
+                            class="hidden p-4 pt-0 text-brand-textSec text-sm border-t border-brand-border mt-2 bg-brand-bg/50">
+                            Most routine reports (CBC, Thyroid, Sugar) are available within 6-12 hours. Specialized
+                            tests may take 24-48 hours. You will be notified via SMS.
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="border border-brand-border rounded-lg bg-brand-bgSec overflow-hidden">
+                        <button
+                            onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon-up').classList.toggle('hidden'); this.querySelector('.faq-icon-down').classList.toggle('hidden');"
+                            class="w-full flex justify-between items-center p-4 text-left hover:bg-brand-bg transition-colors focus:outline-none">
+                            <span class="font-bold text-brand-text">Is home collection available?</span>
+                            <i data-lucide="chevron-down" class="faq-icon-down h-5 w-5 text-brand-textSec"></i>
+                            <i data-lucide="chevron-up" class="faq-icon-up h-5 w-5 text-brand-accent hidden"></i>
+                        </button>
+                        <div
+                            class="hidden p-4 pt-0 text-brand-textSec text-sm border-t border-brand-border mt-2 bg-brand-bg/50">
+                            Yes, we offer home sample collection for a nominal fee of $15. You can select this option
+                            while booking your appointment.
+                        </div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="border border-brand-border rounded-lg bg-brand-bgSec overflow-hidden">
+                        <button
+                            onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon-up').classList.toggle('hidden'); this.querySelector('.faq-icon-down').classList.toggle('hidden');"
+                            class="w-full flex justify-between items-center p-4 text-left hover:bg-brand-bg transition-colors focus:outline-none">
+                            <span class="font-bold text-brand-text">Are your labs accredited?</span>
+                            <i data-lucide="chevron-down" class="faq-icon-down h-5 w-5 text-brand-textSec"></i>
+                            <i data-lucide="chevron-up" class="faq-icon-up h-5 w-5 text-brand-accent hidden"></i>
+                        </button>
+                        <div
+                            class="hidden p-4 pt-0 text-brand-textSec text-sm border-t border-brand-border mt-2 bg-brand-bg/50">
+                            Absolutely. Aura Beauty is certified and licensed, ensuring the highest standards of
+                            safety
+                            and beauty care.
+                        </div>
+                    </div>
+                    <!-- FAQ 5 -->
+                    <div class="border border-brand-border rounded-lg bg-brand-bgSec overflow-hidden">
+                        <button
+                            onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon-up').classList.toggle('hidden'); this.querySelector('.faq-icon-down').classList.toggle('hidden');"
+                            class="w-full flex justify-between items-center p-4 text-left hover:bg-brand-bg transition-colors focus:outline-none">
+                            <span class="font-bold text-brand-text">How can I access my past appointments?</span>
+                            <i data-lucide="chevron-down" class="faq-icon-down h-5 w-5 text-brand-textSec"></i>
+                            <i data-lucide="chevron-up" class="faq-icon-up h-5 w-5 text-brand-accent hidden"></i>
+                        </button>
+                        <div
+                            class="hidden p-4 pt-0 text-brand-textSec text-sm border-t border-brand-border mt-2 bg-brand-bg/50">
+                            You can log in to your account using your email and password to view and
+                            manage historical bookings.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-bg border-t border-brand-border pt-16 pb-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center cursor-pointer">
+                        <img src="assets/images/new-logo.jpg" alt="Aura Beauty Logo" class="h-10 w-10 object-contain">
+                        <span class="ms-3 text-2xl font-heading font-bold text-brand-text tracking-wide">
+                            Aura<span class="text-brand-accent">Beauty</span>
+                        </span>
+                    </a>
+                    <p class="text-brand-textSec text-sm leading-relaxed">
+                        Your premier destination for expert hair styling, skin care, and complete beauty
+                        transformations. Look your best, feel your best.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-textSec cursor-pointer hover:text-brand-accent hover:-translate-y-1 transition-all duration-300"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class=\"text-brand-text font-bold mb-4 inline-block pb-1\">Quick
+                        Links</h3>
+                    <ul class="space-y-2 text-sm text-brand-textSec">
+                        <li><a href="about.html" class=\"text-brand-textSec\">About Us</a></li>
+                        <li><a href="about.html" class=\"text-brand-textSec\">Our Stylists</a>
+                        </li>
+                        <li><a href="services.html" class=\"text-brand-textSec\">Services</a>
+                        </li>
+                        <li><a href="contact.html" class=\"text-brand-textSec\">Contact Support</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class=\"text-brand-text font-bold mb-4 inline-block pb-1\">Services
+                    </h3>
+                    <ul class="space-y-2 text-sm text-brand-textSec">
+                        <li><a href="services.html?category=Hair Care"
+                                class=\"text-brand-textSec\">Hair Care</a></li>
+                        <li><a href="services.html?category=Nail Treatments"
+                                class=\"text-brand-textSec\">Nail Treatments</a></li>
+                        <li><a href="services.html?category=Cardiac"
+                                class=\"text-brand-textSec\">Cardiac Profile</a></li>
+                        <li><a href="services.html?category=Diabetes"
+                                class=\"text-brand-textSec\">Diabetes Care</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class=\"text-brand-text font-bold mb-4 inline-block pb-1\">Contact Us
+                    </h3>
+                    <ul class="space-y-4 text-sm text-brand-textSec">
+                        <li class="flex items-start">
+                            <i data-lucide="map-pin" class="h-5 w-5 text-brand-accent me-2 shrink-0"></i>
+                            <span>123 Beauty Blvd, Fashion District, Style City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="h-5 w-5 text-brand-accent me-2 shrink-0"></i>
+                            <span>+1 (800) 555-0199</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="h-5 w-5 text-brand-accent me-2 shrink-0"></i>
+                            <span>booking@glamoursalon.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-brand-textSec text-sm">© 2026 Aura Beauty. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-brand-textSec mt-4 md:mt-0">
+                    <a href="#" class="hover:text-brand-text">Privacy Policy</a>
+                    <a href="#" class="hover:text-brand-text">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
